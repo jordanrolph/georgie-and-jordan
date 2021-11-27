@@ -309,7 +309,7 @@ const Accomodation = () => {
               know so we can arrange things with the venue:
             </p>
             <a
-              href=""
+              href="" // TODO: mailto link
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-beret px-4 py-2 rounded inline-flex justify-between items-center cursor-pointer text-dusty-pink mt-6"
@@ -330,6 +330,60 @@ const Accomodation = () => {
   );
 };
 
+const RSVP = () => {
+  return (
+    <section className="bg-green-beret bg-pattern-autumn-green pt-14 px-4 md:px-12 -mt-3">
+      <div className="bg-sunny-yellow px-6">
+        <header className="text-center max-w-2xl mx-auto">
+          <h2 className="text-5xl lg:text-6xl font-serif pt-14">
+            Totes up for it?
+          </h2>
+          <p className="mt-5 text-lg mb-4">
+            Please let us know if you’re able to come by March 30th 2022. We’ll
+            also want to know if you’re planning on camping, and if you’ve got
+            any dietary requirements.
+          </p>
+          <a
+            href="" // TODO: Mailto link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-beret px-4 py-2 rounded inline-flex justify-between items-center cursor-pointer text-white hover:text-dusty-pink mt-6"
+          >
+            <p className="pr-3">RSVP</p>
+            <Image
+              src="/icon-envelope.svg"
+              alt="Envelope icon"
+              width={24}
+              height={24}
+              className=""
+            />
+          </a>
+
+          <p className="pt-14 pb-8">
+            ...or feel free to Whatsapp, call, text, etc
+          </p>
+        </header>
+      </div>
+      <Footer />
+    </section>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="pt-16 pb-4 flex items-center justify-center">
+      <p className="text-dusty-pink text-sm pr-2">Built with</p>
+      <Image
+        src="/icon-heart.svg"
+        alt="Love icon"
+        width={20}
+        height={20}
+        className=""
+      />
+    </footer>
+  );
+};
+
 const Home: NextPage = () => {
   return (
     <div className="">
@@ -344,6 +398,7 @@ const Home: NextPage = () => {
         <Agenda />
         <Location />
         <Accomodation />
+        <RSVP />
       </main>
     </div>
   );
