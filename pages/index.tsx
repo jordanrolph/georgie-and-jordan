@@ -341,14 +341,28 @@ const Accomodation = () => {
           <div className="w-full xl:w-5/12 md:w-4/12 mb-8">
             <p className="">
               There’s a longer list of local hotels{" "}
-              <a className="underline text-pink-600 hover:text-pink-400 cursor-pointer">
+              <a
+                className="underline text-pink-600 hover:text-pink-400 cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="/docs/hotels.pdf"
+              >
                 here
               </a>
               .
             </p>
             <p className="mt-6">
               Please book a cabs in advance.{" "}
-              <b>Uber doesn’t work out in Epping</b>.
+              <b>Uber doesn’t work out in Epping</b>. This{" "}
+              <a
+                className="underline text-pink-600 hover:text-pink-400 cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="/docs/taxis.pdf"
+              >
+                link
+              </a>{" "}
+              has some local cab firms.
             </p>
             <p className="mt-6">
               There is also camping on site, so you’re welcome to bring a tent.
