@@ -488,14 +488,21 @@ const FAQ = () => {
 const Footer = () => {
   return (
     <footer className="bg-green-beret bg-pattern-autumn-green pt-16 pb-4 flex items-center justify-center">
-      <p className="text-dusty-pink text-sm pr-2">Built with</p>
-      <Image
-        src="/icon-heart.svg"
-        alt="Love icon"
-        width={20}
-        height={20}
-        className=""
-      />
+      <a
+        href="https://jordanrolph.com"
+        className="flex text-dusty-pink hover:text-sunny-yellow"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <p className="text-sm pr-2">Built with</p>
+        <Image
+          src="/icon-heart.svg"
+          alt="Love icon"
+          width={20}
+          height={20}
+          className=""
+        />
+      </a>
     </footer>
   );
 };
