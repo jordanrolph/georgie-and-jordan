@@ -258,7 +258,7 @@ YOUR NAME
 xoxo
 `);
 
-const mailTo = `mailto:rsvp@georgieandjordanrolph.com?subject=RSVP&body=${RSVPBody}`;
+const mailTo = `mailto:rsvp@georgieandjordan.com?subject=RSVP&body=${RSVPBody}`;
 
 const HOTELS = [
   {
