@@ -450,7 +450,7 @@ const FAQS = [
 const FAQ = () => {
   return (
     <section className="bg-green-beret bg-pattern-autumn-green pt-6 px-4 md:px-12 flex items-center justify-center">
-      <div className="max-w-3xl mb-8">
+      <div className="max-w-xl mb-8">
         <h2 className="text-3xl lg:text-3xl font-serif pt-14 text-white text-center mb-10">
           Infrequently asked questions
         </h2>
