@@ -10,6 +10,22 @@ const Header = () => {
     });
   };
 
+  const ShortDown = () => {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="animate-bounce transform rotate-3 block mt-4 md:mt-0 h-6 w-6 sm:mr-2"
+      >
+        <path
+          d="M11 16.17L7.41 12.59L6 14L12 20L18 14L16.59 12.59L13 16.17V4H11V16.17Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  };
+
   return (
     <section className="bg-green-beret bg-pattern-autumn-green bg-repeat transform -skew-y-1 -my-3">
       <div className="md:bg-portrait-spokes bg-left-bottom bg-contain bg-no-repeat">
@@ -27,23 +43,23 @@ const Header = () => {
                 !
               </span>
             </h1>
-            <div className="flex justify-center md:justify-end items-end text-dusty-pink transform -rotate-3 xl:mr-12">
-              <Image
-                className="animate-bounce transform rotate-3 block"
-                src="/short_down.svg"
-                alt="Arrow inviting to scroll down"
-                width={24}
-                height={24}
-              />
+            <div className="flex justify-end items-end text-white transform -rotate-3 md:ml -0 xl:mr-12">
               <button
                 onClick={handleScrollDown}
-                className="text-sunny-yellow lg:text-sunny-yellow md:text-white text-xl lg:text-2xl mt-12 ml-2 hover:text-dusty-pink"
+                className="flex flex-col-reverse sm:flex-row items-center justify-center sm:text-sunny-yellow lg:text-sunny-yellow md:text-white text-xl sm:text-2xl mt-12 ml-2 md:hover:text-dusty-pink hover:text-red-500"
               >
-                Come and help us have fun
+                <ShortDown />
+                <p className="mr-8">
+                  Come and help
+                  <br className="md:hidden" /> us have fun
+                </p>
               </button>
             </div>
           </header>
         </div>
+      </div>
+      <div className="md:hidden h-96 -mt-80 bg-portrait-spokes w-full bg-contain bg-no-repeat">
+        &nbsp;
       </div>
     </section>
   );
