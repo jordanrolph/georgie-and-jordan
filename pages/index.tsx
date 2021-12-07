@@ -28,21 +28,24 @@ const Header = () => {
 
   return (
     <section className="bg-green-beret bg-pattern-autumn-green bg-repeat transform -skew-y-1 -my-3">
-      <div className="md:bg-portrait-spokes bg-left-bottom bg-contain bg-no-repeat">
+      <div className="md:bg-portrait bg-left-bottom bg-contain bg-no-repeat">
         <div className="container mx-auto flex justify-end">
-          <header className="text-center md:text-right pt-8 xl:pt-16 pb-24 xl:pb-24 w-full lg:w-8/12 xl:w-9/12 transform skew-y-1">
+          <header className="text-center md:text-right pt-8 xl:pt-10 pb-24 xl:pb-24 w-full lg:w-8/12 xl:w-9/12 transform skew-y-1">
             <Image
               src="/logo.svg"
               alt="Georgie & Jordan"
               width={130}
               height={64}
             />
-            <h1 className="text-8xl lg:text-9xl text-white font-serif mt-16 md:mt-20 xl:mt-28">
+            <h1 className="text-8xl lg:text-9xl text-white font-serif mt-12 md:mt-18 xl:mt-24">
               We’re getting married
               <span className="text-dusty-pink transform rotate-2 inline-block">
                 !
               </span>
             </h1>
+            <p className="text-white mb-5 mt-1 lg:mr-10">
+              Saturday 2<sup>nd</sup> July 2022
+            </p>
             <div className="flex justify-end items-end text-white transform -rotate-3 md:ml -0 xl:mr-12">
               <button
                 onClick={handleScrollDown}
@@ -58,7 +61,7 @@ const Header = () => {
           </header>
         </div>
       </div>
-      <div className="md:hidden h-96 -mt-80 bg-portrait w-full bg-contain bg-no-repeat">
+      <div className="md:hidden h-96 md:-mt-80 -mt-72 bg-portrait w-full bg-contain bg-no-repeat">
         &nbsp;
       </div>
     </section>
@@ -137,7 +140,7 @@ const Agenda = () => {
       <div className="container mx-auto transform skew-y-1 my-3">
         <header className="text-center">
           <h2 className="text-5xl lg:text-6xl font-serif">What’s the plan?</h2>
-          <p className="mt-5 font-medium text-lg">
+          <p className="mt-5 font-medium text-lg text-green-beret-light">
             It goes a little something like this
           </p>
         </header>
@@ -335,7 +338,7 @@ const Accomodation = () => {
       <div className="container mx-auto transform skew-y-1">
         <header className="text-center">
           <h2 className="text-5xl lg:text-6xl font-serif">Where can I stay?</h2>
-          <p className="mt-5 font-medium text-lg">
+          <p className="mt-5 font-medium text-lg text-green-beret-light">
             There’s a few local hotels. They are all a short taxi ride away.
           </p>
         </header>
@@ -402,7 +405,7 @@ const Accomodation = () => {
 const RSVP = () => {
   return (
     <section className="bg-green-beret bg-pattern-autumn-green pt-14 px-4 md:px-12 -mt-3">
-      <div className="bg-sunny-yellow px-6">
+      <div className="bg-sunny-yellow px-6 bg-pattern-bubbles-yellow xl:bg-portrait-spokes xl:bg-contain xl:bg-no-repeat xl:rounded-2xl">
         <header className="text-center max-w-2xl mx-auto">
           <h2 className="text-5xl lg:text-6xl font-serif pt-14">
             Totes up for it?
@@ -461,7 +464,7 @@ const FAQS = [
   {
     question: "How does the camping work?",
     answer:
-      "You can pitch your own tent in the field attached to the site, and stay overnight on the 2<sup>nd</sup>. The loos are open all night, but there are no showering facilities. We have to tell the venue in advance exactly who is staying, so please let us know if you're camping when you RSVP.",
+      "You can pitch your own tent in the field attached to the site, and stay overnight on the 2nd July. The loos are open all night, but there are no showering facilities. We have to tell the venue in advance exactly who is staying, so please let us know if you're camping when you RSVP.",
   },
   {
     question: "Can I bring additional guests?",

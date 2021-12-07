@@ -10,7 +10,7 @@ module.exports = {
       },
       colors: {
         "green-beret": {
-          light: "#39403A",
+          light: "#3C433D",
           DEFAULT: "#353C33",
         },
         "dusty-pink": {
@@ -26,7 +26,7 @@ module.exports = {
         "portrait-spokes": "url('/portrait-spokes.png')",
         "pattern-autumn-green": "url('/autumn-green.svg')",
         "pattern-topography-green": "url('/topography-green.svg')",
-        "pattern-bubbles-pink": "url('/bubbles-pink.svg')",
+        "pattern-bubbles-yellow": "url('/bubbles-yellow.svg')",
         "pattern-wiggle-pink": "url('/wiggle-pink.svg')",
         "pattern-leaf-pink": "url('/leaf-pink.svg')",
       },
