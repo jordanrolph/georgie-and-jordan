@@ -234,28 +234,7 @@ const Location = () => {
 };
 
 const RSVPBody = encodeURIComponent(`
-Dear my favourite couple of all time,
-
-I absolutely cannot wait to celebrate with you on your wedding day.
-
-I am literally counting down the minutes until I get to share this special day with you. I have made a wall chart and my pen has nearly run out from ticking off the days.
-
-~~~~
-
-Can you make it?
-
-Any dietary requirements?
-
-Will you be camping?
-
-~~~~
-
-Billions of love and sloppy kisses,
-
-
-YOUR NAME
-
-xoxo
+Dear my favourite couple of all time,\rI absolutely cannot wait to celebrate with you on your wedding day.\rI am literally counting down the minutes until I get to share this special day with you. I have made a wall chart and my pen has nearly run out from ticking off the days.\r\r~~~~\r\rCan you make it?\rAny dietary requirements?\rWill you be camping?\r\r~~~~\r\rBillions of love and sloppy kisses,\r\rYOUR NAME\rxoxo
 `);
 
 const mailTo = `mailto:rsvp@georgieandjordan.com?subject=RSVP&body=${RSVPBody}`;
