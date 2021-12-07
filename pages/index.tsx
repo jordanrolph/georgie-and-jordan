@@ -58,7 +58,7 @@ const Header = () => {
           </header>
         </div>
       </div>
-      <div className="md:hidden h-96 -mt-80 bg-portrait-spokes w-full bg-contain bg-no-repeat">
+      <div className="md:hidden h-96 -mt-80 bg-portrait w-full bg-contain bg-no-repeat">
         &nbsp;
       </div>
     </section>
@@ -68,8 +68,8 @@ const Header = () => {
 const AGENDA_ITEMS = [
   {
     imgPath: "/ceremony-venue.png",
-    displayTime: "1 pm",
-    timeString: "13:00",
+    displayTime: "1:00 pm",
+    timeString: "2022-07-02  13:00",
     title: "Ceremony",
     description:
       "Watch in hushed awe as we deftly slip into rings inside an old barn.",
@@ -77,7 +77,7 @@ const AGENDA_ITEMS = [
   {
     imgPath: "/curry-on-naan-stop.png",
     displayTime: "3:30 pm",
-    timeString: "15:30",
+    timeString: "2022-07-02 15:30",
     title: "Bombay streetfood",
     description:
       "Try to contain your joy as speeches combine with yummy Indian food.",
@@ -85,14 +85,14 @@ const AGENDA_ITEMS = [
   {
     imgPath: "/evening-venue.png",
     displayTime: "6:30 pm",
-    timeString: "18:30",
+    timeString: "2022-07-02 18:30",
     title: "Evening guests",
     description: "Eat cake, wave sparklers, and dance like no one is looking.",
   },
   {
     imgPath: "/taxi.png",
     displayTime: "Midnight",
-    timeString: "23:59",
+    timeString: "2022-07-02 23:59",
     title: "Fun stops",
     description: "All good things come to an end. Carriages by 12:30.",
   },
@@ -122,10 +122,7 @@ const AgendaCard = ({ item, index }: AgendaCardProps) => {
           className="rounded-xl"
         />
       </div>
-      <time
-        dateTime={`2022-07-02 ${timeString}`}
-        className="text-pink-600 font-bold  mt-4"
-      >
+      <time dateTime={timeString} className="text-pink-600 font-bold  mt-4">
         {displayTime}
       </time>
       <h3 className="font-serif text-3xl lg:text-2xl xl:text-3xl">{title}</h3>
@@ -162,11 +159,11 @@ const Location = () => {
     <section>
       <div className="bg-green-beret pt-12 pb-8 bg-pattern-topography-green bg-repeat transform -skew-y-1 -my-3 px-8">
         <div className="container mx-auto flex flex-wrap-reverse justify-center items-center transform skew-y-1 my-3">
-          <p className="mt-6 text-dusty-pink font-medium mb-4 lg:hidden">
+          <p className="mt-6 text-dusty-pink-dark mb-4 lg:hidden">
             P.S. There’s plenty of parking on site.
           </p>
           <a
-            className="hover:opacity-90"
+            className="hover:opacity-90 transform hover:scale-105 transition rotate-0 hover:rotate-2 duration-500 ease-in-out"
             href={googleMapsLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -223,7 +220,7 @@ const Location = () => {
                 />
               </a>
             </div>
-            <p className="text-dusty-pink font-medium mb-4 hidden lg:block">
+            <p className="text-dusty-pink-dark mb-4 hidden lg:block">
               P.S. There’s plenty of parking on site.
             </p>
           </div>
@@ -299,12 +296,16 @@ const HotelCard = ({ hotel, index }: HotelCardProps) => {
   const { imgPath, name, link, miles, comment } = hotel;
   return (
     <a
-      className="flex flex-col cursor-pointer mb-8"
+      className="flex w-full lg:w-3/12 items-center justify-between lg:items-start lg:justify-start lg:flex-col cursor-pointer mb-8 group"
       href={link}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className={`transform ${index % 2 ? "rotate-2" : "-rotate-2"}`}>
+      <div
+        className={`transform ${
+          index % 2 ? "rotate-2" : "-rotate-2"
+        } pr-2 group-hover:scale-105 transition duration-500 ease-in-out`}
+      >
         <Image
           src={imgPath}
           alt={name}
@@ -313,11 +314,17 @@ const HotelCard = ({ hotel, index }: HotelCardProps) => {
           className="rounded-xl"
         />
       </div>
-      <h4 className="underline text-lg mt-2">{name}</h4>
-      <p className="leading-5 text-pink-600 mt-1">{miles} miles</p>
-      <p className="leading-5 mt-1 text-green-beret-light text-sm italic">
-        {comment}
-      </p>
+      <div className="w-6/12 lg:w-full">
+        <h4 className="underline text-lg mt-2 font-medium leading-tight group-hover:text-green-beret-light">
+          {name}
+        </h4>
+        <p className="leading-5 text-pink-600 mt-2 text-sm font-medium">
+          {miles} miles
+        </p>
+        <p className="leading-5 text-green-beret-light text-sm italic">
+          {comment}
+        </p>
+      </div>
     </a>
   );
 };
@@ -332,8 +339,8 @@ const Accomodation = () => {
             There’s a few local hotels. They are all a short taxi ride away.
           </p>
         </header>
-        <div className="flex justify-between items-center flex-wrap mt-12">
-          <div className="flex justify-around lg:justify-between flex-wrap mt-10 md:w-8/12 xl:w-7/12 w-full pr-10">
+        <div className="flex justify-between items-center flex-wrap sm:mt-12">
+          <div className="flex flex-col lg:flex-row justify-around flex-wrap mt-10 md:w-8/12 xl:w-7/12 w-full md:pr-10">
             {HOTELS.map((hotel, index) => (
               <HotelCard key={hotel.name} hotel={hotel} index={index} />
             ))}
@@ -374,7 +381,7 @@ const Accomodation = () => {
               href={mailTo}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-beret px-4 py-2 rounded inline-flex justify-between items-center cursor-pointer text-dusty-pink mt-6"
+              className="bg-green-beret px-4 py-2 rounded inline-flex justify-between items-center cursor-pointer text-white mt-6 transform hover:scale-105 transition"
             >
               <p className="pr-3">I’m down with Bear Grylls</p>
               <Image
@@ -400,8 +407,10 @@ const RSVP = () => {
           <h2 className="text-5xl lg:text-6xl font-serif pt-14">
             Totes up for it?
           </h2>
-          <p className="mt-5 text-lg mb-4">
-            Please let us know if you’re able to come by February 14th 2022.
+          <p className="mt-8 text-lg mb-4">
+            <span className="font-medium">
+              Please let us know if you’re able to come by February 14th 2022.
+            </span>{" "}
             We’ll also want to know if you’re planning on camping, and if you’ve
             got any dietary requirements.
           </p>
@@ -409,9 +418,9 @@ const RSVP = () => {
             href={mailTo}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-beret px-4 py-2 rounded inline-flex justify-between items-center cursor-pointer text-white hover:text-dusty-pink mt-6"
+            className="bg-green-beret px-4 py-2 rounded inline-flex justify-between items-center cursor-pointer text-white mt-6 transform hover:scale-105 transition ease-in-out"
           >
-            <p className="pr-3">RSVP</p>
+            <p className="pr-3">RSVP now</p>
             <Image
               src="/icon-envelope.svg"
               alt="Envelope icon"
@@ -421,7 +430,7 @@ const RSVP = () => {
             />
           </a>
 
-          <p className="pt-14 pb-8">
+          <p className="pt-10 pb-8 text-green-beret-light">
             ...or feel free to Whatsapp, call, text, etc
           </p>
         </header>
@@ -441,6 +450,10 @@ const FAQS = [
     answer: "Yes - and they take card.",
   },
   {
+    question: "When is it?",
+    answer: "Saturday, 2nd July 2022.",
+  },
+  {
     question: "What about gifts?",
     answer:
       "Your presence is present enough. If you'd like to get us a gift, we would really appreciate contributions to our honeymoon.",
@@ -448,7 +461,7 @@ const FAQS = [
   {
     question: "How does the camping work?",
     answer:
-      "You can pitch your own tent in the field attached to the site, and say overnight on the 2nd. The loos are open all night, but there are no showering facilities. We have to tell the venue in advance exactly who is staying, so please let us know if you're camping when you RSVP.",
+      "You can pitch your own tent in the field attached to the site, and stay overnight on the 2<sup>nd</sup>. The loos are open all night, but there are no showering facilities. We have to tell the venue in advance exactly who is staying, so please let us know if you're camping when you RSVP.",
   },
   {
     question: "Can I bring additional guests?",
@@ -487,7 +500,7 @@ const FAQ = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-green-beret bg-pattern-autumn-green pt-16 pb-4 flex items-center justify-center">
+    <footer className="bg-green-beret bg-pattern-autumn-green -mt-4 pt-16 pb-4 flex items-center justify-center">
       <a
         href="https://jordanrolph.com"
         className="flex text-dusty-pink hover:text-sunny-yellow"
@@ -511,7 +524,9 @@ const Home: NextPage = () => {
   return (
     <div className="">
       <Head>
-        <title>Georgie & Jordan - 2nd July 2022</title>
+        <title>
+          Georgie & Jordan - 2<sup>nd</sup> July 2022
+        </title>
         <meta name="description" content="We're getting married!" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#353B33" />
