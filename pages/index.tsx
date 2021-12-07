@@ -527,9 +527,7 @@ const Home: NextPage = () => {
   return (
     <div className="">
       <Head>
-        <title>
-          Georgie & Jordan - 2<sup>nd</sup> July 2022
-        </title>
+        <title>Georgie & Jordan - 2nd July 2022</title>
         <meta name="description" content="We're getting married!" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#353B33" />
